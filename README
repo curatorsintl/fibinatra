@@ -1,1 +1,28 @@
 A facebook app I'm developing in Sinatra with Sinbook and Rack
+
+This is a proof of concept.  The output isn't very manageable now.  I will eventually add 
+different filters and tabs for sorting through friends, managing their statuses, when people 
+add or leave, and hopefully Facebook Connect.
+
+GETTING STARTED
+gem install sinbook
+gem install sinatra
+
+(no bundler yet).
+
+start with the start bash from or however you want. (Uses Thin).
+
+APACHE
+When I run it with thin (per the start bash), I set the port to the default rack port.
+In apache, I have in the virtual host
+
+<VirtualHost *:80>
+    ServerName app.example.tld
+    ServerAlias www.app.example.tld
+    ProxyPass / http://app.example.tld:4567/
+    #DocumentRoot /public/path/to/fibinatra/public (when I was trying to use passenger)
+</VirtualHost>
+
+so, I'm not actually using Passenger at this moment.
+
+
